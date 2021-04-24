@@ -1,5 +1,7 @@
 package com.ecom.utils
 
 object Constants {
-val APPNAME = "ECOM-APPNAME"
+  var MOVIE_PATH = ""
+
+  val APPNAME = "ECOM-APPNAME"
 }
