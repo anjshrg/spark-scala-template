@@ -7,22 +7,7 @@ import org.apache.spark.sql.{Encoders, SparkSession}
 import org.apache.spark.sql.catalyst.ScalaReflection
 import org.apache.spark.sql.types.StructType
 
-//UserID::Gender::Age::Occupation::Zip-code
-case class User(
-                 userId: String,
-                 gender: String,
-                 age: Int,
-                 occupation: String,
-                 zipCode: String
-               )
 
-//UserID::MovieID::Rating::Timestamp
-case class Rating(
-                   userId: String,
-                   movieId: String,
-                   rating: Double,
-                   timestamp: String
-                 )
 
 //MovieID::Title::Genres
 
@@ -44,8 +29,11 @@ object MovieAnalyser extends Report {
      */
     // load data
     val movieData = storage.getMovieData(Constants.MOVIE_PATH)
+    val userData = storage.getUserData(Constants.USER_PATH)
+    val ratingData = storage.getRatingData(Constants.RATING_PATH)
 
     // transform data
+
     // save data
   }
 
