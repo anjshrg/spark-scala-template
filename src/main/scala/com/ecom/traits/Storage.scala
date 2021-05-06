@@ -45,10 +45,7 @@ class LocalStorage(spark: SparkSession) extends Storage {
       .csv(MOVIE_PATH)
   }
 
-  override def writeToStore(ds: DataFrame, path: String, saveMode: String, partitionMode: String): Unit = {
-
-  }
-
+  override def writeToStore(ds: DataFrame, path: String, saveMode: String, partitionMode: String): Unit = ???
   override def readFromSource(path: String, config: AppConfig): Unit = {
     spark.read.format("com.databricks.spark.csv")
       .option("header", "true")
